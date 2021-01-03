@@ -5,6 +5,7 @@ class CreateRecipes < ActiveRecord::Migration[6.0]
             t.text :ingredients
             t.string :chef_name
             t.string :origin
+            t.integer :catagory_id
             t.timestamps
         end    
     end

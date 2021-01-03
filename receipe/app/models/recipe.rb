@@ -1,4 +1,4 @@
-class Recpie < ApplcationRecord
+class Recipe < ApplicationRecord
     belongs_to :catagory
 
 end

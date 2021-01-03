@@ -1,4 +1,4 @@
-class Catagory < ApplcationRecord
-    has_many :recpies
+class Catagory < ApplicationRecord
+    has_many :recipes
 
 end
