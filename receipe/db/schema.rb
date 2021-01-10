@@ -12,18 +12,18 @@
 
 ActiveRecord::Schema.define(version: 2) do
 
-  create_table "catagories", force: :cascade do |t|
+  create_table "categories", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "recpies", force: :cascade do |t|
+  create_table "recipes", force: :cascade do |t|
     t.string "name"
     t.text "ingredients"
     t.string "chef_name"
     t.string "origin"
-    t.integer "catagory_id"
+    t.integer "category_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

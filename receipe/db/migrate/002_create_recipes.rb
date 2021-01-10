@@ -1,11 +1,11 @@
 class CreateRecipes < ActiveRecord::Migration[6.0]
     def change
-        create_table :recpies do |t|
+        create_table :recipes do |t|
             t.string :name
             t.text :ingredients
             t.string :chef_name
             t.string :origin
-            t.integer :catagory_id
+            t.integer :category_id
             t.timestamps
         end    
     end
