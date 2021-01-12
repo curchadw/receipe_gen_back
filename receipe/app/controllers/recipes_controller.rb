@@ -15,7 +15,7 @@ class RecipesController < ApplicationController
 
 
     def create
-        recipe = Recipe.create(rec_params)
+        recipe = Recipe.create(recipe_params)
         if recipe.save
             render json: recipe
         else
@@ -24,8 +24,8 @@ class RecipesController < ApplicationController
     end
     
 
-    def rec_params
-        params.permit(:catagory_id,:name,:ingredients,:chef_name,:origin,catagory_attribute:[:name])
+    def recipe_params
+        params.permit(:category_id,:name,:ingredients,:chef_name,:origin,category_attribute:[:category])
     end
     
     
