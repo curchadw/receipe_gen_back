@@ -1,14 +1,9 @@
 class RecipesController < ApplicationController
 
-    def new
-        recipe = Recipe.new
-
-
-    end
     
     def index
         recipes = Recipe.all
-        render json: recipes, include: :categories
+        render json: recipes, include: :category
     end
 
     def show
@@ -28,11 +23,23 @@ class RecipesController < ApplicationController
             render json: { error: "Couldn't save" }
         end
     end
+
+
+    def destroy
+      
+        recipe = Recipe.find(params[:id])
+        unless recipe.nil?
+          recipe.destroy
+          
+        else
+          render json: { error: "Property not found" }, status: 404
+        end
+    end
     
     private
 
     def recipe_params
-        params.require(:recipe).permit(:category_id,:name,:ingredients,:chef_name,:origin,category_attribute:[:category])
+        params.require(:recipe).permit(:category_id,:name,:ingredients,:chef_name,:origin,category:[:id,:category])
     end
     
     
