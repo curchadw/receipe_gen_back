@@ -7,7 +7,7 @@ get '/categories', to: 'categories#index'
 get '/recipes', to: 'recipes#index'
 post '/recipes', to: 'recipes#create'
 get '/recipes/:id', to: 'recipes#show'
-delete'/recipes/:id', to: 'recipes#destroy'
+delete'/recipes/:id/delete', to: 'recipes#destroy'
 
 
 end

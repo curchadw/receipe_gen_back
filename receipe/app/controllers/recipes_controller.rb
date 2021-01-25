@@ -28,9 +28,11 @@ class RecipesController < ApplicationController
     def destroy
       
         recipe = Recipe.find(params[:id])
+        
         unless recipe.nil?
+      
           recipe.destroy
-          
+          render json: recipe
         else
           render json: { error: "Property not found" }, status: 404
         end
