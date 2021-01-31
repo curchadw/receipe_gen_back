@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 2) do
     t.text "ingredients"
     t.string "chef_name"
     t.string "origin"
+    t.string "instructions"
     t.integer "category_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
