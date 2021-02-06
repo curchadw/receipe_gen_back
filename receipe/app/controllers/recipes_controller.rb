@@ -20,7 +20,8 @@ class RecipesController < ApplicationController
         if recipe.save
             render json: recipe
         else
-            render json: { error: "Couldn't save" }
+            render json: { error: recipe.errors.full_messages.to_sentence  }
+            
         end
     end
 
